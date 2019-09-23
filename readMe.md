@@ -1,7 +1,8 @@
 # Coding Campus 
 Dornbirn 2019
 
-## Tag 1 
+## Woche 1
+### Tag 1 
 Montag, 16.09.2019
 
 #### Basics
@@ -51,7 +52,7 @@ Barrierefreiheit zeigt Standards auf um die bestmögliche Nutzung von Technologi
 
 bezeichnet Webdesign, das es Internetseiten erlaubt, sich an das Anzeigegerät anzupassen. Es stellt den Seiteninhalt auch auf kleinen Bildschirmgrößen übersichtlich dar. Überwiegend gilt hier "mobile first", was so viel bedeutet wie, eine Seite auf die mobile Ansicht anzupassen und diese Ansicht dann über Mediaqueries für größere Bildschirme zu verändern. Nützliche Seite: http://ami.responsivedesign.is/
 
-## Tag 2
+### Tag 2
 Dienstag, 17.09.2019
 
 ###### Styleguide
@@ -88,24 +89,80 @@ In einer Session wird eine ID verwendet, um User zu identifizieren und eine Verb
 
 ###### clientseitig
 
+Clientseitige Programme und Scripts werden auf dem Rechner des Users ausgeführt. Eingaben, Abfragen und Prüfungen können offline gemacht werden. Seiten werden zum Beispiel auf dem Rechner des Users zusammen gestellt und interpetiert.
 
+###### serverseitig
 
-###### serverseitiges
-
-
+Programme und Scripts werden direkt auf dem Server ausgeführt. Der Server übernimmt die Rechenleistung und liefert das Ergebnis dann aus. Seiten werden zum Beispiel auf dem Server zusammen gestellt und dann erst ausgeliefert.
 
 ###### DOM
 
-Document Object Model - 
+Document Object Model - ist eine Baumstruktur in der sich alle Elemente einer HTML-Seite befinden. 
 
 ###### Impressum, DSGVO
 
+Im Impressum müssen Angaben zum Verantwortlichen für den Inhalt gemacht werden. (Name, Adresse, evtl Gewerbe, UID) Auch Angaben zum Urheberrecht finden sich hier.
+
 ###### Editor
+
+Unter einem Editor versteht man in der Regel einen reinen Texteditor. Die meisten Editoren können über Plugins erweitert und ausgebaut werden bis hin zum Umfang einer kompletten IDE. 
 
 ###### Parser
 
+ist ein Computerprogramm, das in der Informatik für die Zerlegung und Umwandlung einer Eingabe in ein für die Weiterverarbeitung geeigneteres Format zuständig ist. 
+
 ###### Compiler
+
+wandelt Sourcecode um, in Maschinencode um der ausgeführt wird, oder zB in Bytecode, der dann weiter interpretiert wird. 
 
 ###### Interpreter
 
+interpretiert Code und führt ihn aus, in dem er ihn in Maschinencode übersetzt.
+
 ###### IDE
+
+Integrated Development Environment - sind Entwicklungsumgebungen, die alle wichtigen Tools bereits enthalten. Wichtige wiederkehrende Aufgaben werden automatisiert.
+
+### Tag 3
+
+###### XML
+
+ist ein strukturiertes Dateiformat zur Speicherung und Weitergabe von Daten.
+
+###### JSON
+
+Javascript Opject Notation basiert auf Javascript. Ist ebenfalls ein Dateiformat zur Speicherung und Weitergabe von Daten.
+
+###### HTML
+
+derzeit Version 5, gibt über Tags die Struktur, das Grundgerüst einer Seite vor.
+
+### Tag 4
+
+###### CSS
+
+beinhaltet Styles für Form und Aussehen einer Webseite. Über Selektoren werden HTML-Elemente angewählt.
+
+### Tag 5 
+
+###### Javascript/jQuery
+
+Javascript ist eine Scriptsprache. Sie wird hauptsächlich auf Internetseiten clientseitig verwendet. Serverseitige Anwendung ist inzwischen auch verbreitet über zB Node.js. jQuery ist eine Library zu JS. Sie vereinfacht die Interaktion mit den einzelnen DOM-Elementen. 
+
+## Woche 2
+### Tag 6
+
+###### PHP
+
+ist eine serverseitige Scriptsprache. Sie wird auf dem entsprechenden Server interpretiert.
+
+###### Java
+
+ist eine objektorientierte Programmiersprache, die zu Bytecode compiliert wird, um dann in der Java Runtime Environment bei Ausführung interpretiert zu werden. 
+
+###### C#
+
+ist eine objektorientierte Programmiersprache im .NET-Framework
+
+###### AJAX
+
