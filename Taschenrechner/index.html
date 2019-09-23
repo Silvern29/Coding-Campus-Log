@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="styles.css" rel="stylesheet">
+    <title>Florian Redlinghaus</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<header>
+    <h1>Taschenrechner</h1>
+</header>
+
+<main>
+    <div id="display"></div>
+    <div class="keys">
+        <div class="num">
+            <div class="btn" id="1">1</div>
+            <div class="btn" id="2">2</div>
+            <div class="btn" id="3">3</div>
+            <div class="btn" id="4">4</div>
+            <div class="btn" id="5">5</div>
+            <div class="btn" id="6">6</div>
+            <div class="btn" id="7">7</div>
+            <div class="btn" id="8">8</div>
+            <div class="btn" id="9">9</div>
+            <div class="btn" id="0">0</div>
+        </div>
+        <div class="op">
+            <div class="btn" id="clr">C</div>
+            <div class="btn" id="div">/</div>
+            <div class="btn" id="mult">*</div>
+            <div class="btn" id="min">-</div>
+            <div class="btn" id="plus">+</div>
+            <div class="btn" id="equ">=</div>
+        </div>
+    </div>
+</main>
+
+<script>
+
+    let tmp = "";
+
+    $(".btn").click(function() {
+        if (this.id != "clr" && this.id != "equ") {
+            tmp += this.innerHTML;
+            $("#display").html(tmp);
+        } else if (this.id == "equ") {
+            $("#display").html(eval(tmp));
+            tmp = "";
+        } else if (this.id == "clr") {
+            tmp = "";
+            $("#display").html(tmp);
+        }
+    });
+
+</script>
+
+</body>
+</html>

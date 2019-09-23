@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Kundenverzeichnis>
+	<Kunde>
+		<Kundenummer>1</Kundenummer>
+		<Name>Müller GmbH</Name>
+		<Kontakt>info@mueller.de</Kontakt>
+		<Umsatz>128.000€</Umsatz>
+	</Kunde>
+</Kundenverzeichnis>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Kundenverzeichnis>
+    <Kunde Kundenummer="1" Name="Müller GmbH" Kontakt="info@mueller.de" Umsatz="128.000€"/>
+</Kundenverzeichnis>
