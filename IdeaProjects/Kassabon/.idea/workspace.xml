@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37cc260d-d8ca-4a37-8e85-3a07d0003f3f" name="Default Changelist" comment="" />
+    <list default="true" id="37cc260d-d8ca-4a37-8e85-3a07d0003f3f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Variables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Variables/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +16,11 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1RHRch1Y01yCOO0tJAHQegnNBJz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Git/bin/git.exe" />
@@ -67,7 +73,7 @@
       <updated>1569322115504</updated>
       <workItem from="1569322116897" duration="797000" />
       <workItem from="1569335239961" duration="3251000" />
-      <workItem from="1569393419638" duration="3493000" />
+      <workItem from="1569393419638" duration="5532000" />
     </task>
     <servers />
   </component>
