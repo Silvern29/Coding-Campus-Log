@@ -101,11 +101,9 @@ public class Main {
         if (diffInMin <= 10) {
             System.out.println("Wir wünschen dir viel Spaß bei deinem Film. Die Zeit bis zum Film reicht noch für einen Besuch der Toiletten.");
         } else {
-            
             double geld = 53.60;
             System.out.println("Du entscheidest dich für Popcorn und Cola.");
             System.out.println("Das macht 6,80 EUR.");
-            if ()
         }
     }
 }
