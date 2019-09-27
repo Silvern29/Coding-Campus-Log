@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="37cc260d-d8ca-4a37-8e85-3a07d0003f3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Variables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Variables/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/out/production/Kino/at/redlinghaus/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Kino/out/production/Kino/at/redlinghaus/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/out/production/Kino/at/redlinghaus/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Kino/out/production/Kino/at/redlinghaus/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/src/at/redlinghaus/Ticket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kino/ticket.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Kino/ticket.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +82,7 @@
       <workItem from="1569322116897" duration="797000" />
       <workItem from="1569335239961" duration="3251000" />
       <workItem from="1569393419638" duration="5532000" />
+      <workItem from="1569566449311" duration="773000" />
     </task>
     <servers />
   </component>

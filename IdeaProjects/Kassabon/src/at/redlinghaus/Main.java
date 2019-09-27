@@ -5,15 +5,9 @@ import java.lang.reflect.Array;
 public class Main {
 
     public static void main(String[] args) {
-//        double wurst = 4.20;
-//        double kaese = 2.30;
-//        double brot = 2.10;
-//        double dvd = 12.00;
-
         String [] artArr = {"Wurst", "Käse", "Brot", "DVD"};
         double [] priceArr = {4.20, 2.30, 2.10, 12.00};
         int [] anzArr = {1, 1, 1, 2};
-//        int wurstAnz, kaeseAnz, brotAnz, dvdAnz;
 
         double brieftasche = 50.00;
         double total = 0;

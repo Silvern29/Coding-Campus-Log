@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String[] mov = {"Alien", "Terminator", "Star Wars", "Biene Maja"};
         double[][] times = {{20.00, 22.15}, {18.30, 20.15, 22.00}, {18.00, 20.15}, {14.00, 16.00}};
-        boolean[][] isFull = {{false, true}, {true, false, true}, {false, true}, {false, false}};
+        boolean[][] isFull = {{false, false}, {true, false, true}, {false, true}, {false, false}};
         int[] saal = {1, 2, 3, 3};
         String line = "  ___________________________________________";
         String dots = "  ...........................................";
@@ -88,22 +88,25 @@ public class Main {
         } while (isFull[index][timeChoice - 1]);
 
         int minStart = (int) (Math.ceil((times[index][timeChoice - 1] - Math.floor(times[index][timeChoice - 1])) * 100));
-        int hourStart = (int) times[index][timeChoice - 1] % 12;
+        int hourStart = (int) times[index][timeChoice - 1];
 
         Calendar today = Calendar.getInstance();
         long millNow = today.getTimeInMillis();
 
-        today.set(Calendar.HOUR, hourStart);
+        today.set(Calendar.HOUR_OF_DAY, hourStart);
         today.set(Calendar.MINUTE, minStart);
 
         long start = today.getTimeInMillis();
         int diffInMin = (int) (start - millNow) / 1000 / 60;
-        if (diffInMin <= 10) {
-            System.out.println("Wir wünschen dir viel Spaß bei deinem Film. Die Zeit bis zum Film reicht noch für einen Besuch der Toiletten.");
+        if (diffInMin < 0) {
+            System.out.println("Der Film hat bereits begonnen!");
+        } else if (diffInMin <= 10) {
+            System.out.println("Wir wünschen dir viel Spaß bei deinem Film. Die Zeit bis zum Film reicht nur noch für einen Besuch der Toiletten.");
         } else {
-            double geld = 53.60;
-            System.out.println("Du entscheidest dich für Popcorn und Cola.");
-            System.out.println("Das macht 6,80 EUR.");
+            Shop kinoShop = new Shop();
+
+            System.out.printf("  Vielen Dank für deinen Einkauf im Shop!%n%n");
+            kinoShop.bon();
         }
     }
 }
