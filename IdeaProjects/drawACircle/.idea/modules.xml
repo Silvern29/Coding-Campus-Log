@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Circle.iml" filepath="$PROJECT_DIR$/Circle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drawACircle.iml" filepath="$PROJECT_DIR$/drawACircle.iml" />
     </modules>
   </component>
 </project>
