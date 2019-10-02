@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25278a6d-493f-45d0-8d16-ec92e28954bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CountingSort/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CountingSort/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="268cc201-2ecc-4505-acac-6a22612ef4d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../SelectionSort/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Konto/out/production/Konto/at/redlinghaus/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Konto/out/production/Konto/at/redlinghaus/Account.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Konto/out/production/Konto/at/redlinghaus/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Konto/out/production/Konto/at/redlinghaus/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Konto/out/production/Konto/at/redlinghaus/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Konto/out/production/Konto/at/redlinghaus/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Konto/src/at/redlinghaus/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Konto/src/at/redlinghaus/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Konto/src/at/redlinghaus/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Konto/src/at/redlinghaus/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Konto/src/at/redlinghaus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Konto/src/at/redlinghaus/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SelectionSort/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SelectionSort/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SelectionSort/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SelectionSort/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SelectionSort/out/production/SelectionSort/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SelectionSort/out/production/SelectionSort/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SelectionSort/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SelectionSort/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,19 +22,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1Rc9moSGiehY2GpdOxWR0kwNGIe" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\flori\Documents\GitHub\Coding-Campus-Log\IdeaProjects\BubbleSort\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RdoMs7hguVmSmjc54B74fBwvxR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sort" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,8 +53,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="SelectionSort" />
+      <option name="MAIN_CLASS_NAME" value="at.redlinghaus.Main" />
+      <module name="Sort" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -71,13 +73,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25278a6d-493f-45d0-8d16-ec92e28954bb" name="Default Changelist" comment="" />
-      <created>1569955678687</created>
+      <changelist id="268cc201-2ecc-4505-acac-6a22612ef4d8" name="Default Changelist" comment="" />
+      <created>1570006288992</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1569955678687</updated>
-      <workItem from="1569955684114" duration="3650000" />
-      <workItem from="1570006361477" duration="2504000" />
+      <updated>1570006288992</updated>
+      <workItem from="1570006292667" duration="1587000" />
+      <workItem from="1570007914856" duration="127000" />
     </task>
     <servers />
   </component>
@@ -89,7 +91,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

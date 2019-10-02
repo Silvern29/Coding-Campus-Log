@@ -1,56 +1,9 @@
 package at.redlinghaus;
 
-import java.util.Scanner;
-
-import static at.redlinghaus.Account.accounts;
-import static at.redlinghaus.Customer.customersList;
+import static at.redlinghaus.Bank.accounts;
+import static at.redlinghaus.Bank.customersList;
 
 public class Main {
-
-    public static int input() {
-        Scanner myScan = new Scanner(System.in);
-        int choice;
-        System.out.printf("Möchten Sie ein [1] Kundenkonto anlegen [2] Kundenkonto abfragen [3] Konto eröffnen [4] Geld einzahlen [5] Geld abheben [6] Geld überweisen [7] Kundenkonto wechseln [8] Exit? ");
-        choice = myScan.nextInt();
-        myScan.nextLine();
-        return choice;
-    }
-
-    public static Customer newCustomer() {
-        Scanner myScan = new Scanner(System.in);
-        System.out.printf("Bitte geben Sie Ihren Namen ein! %nVorname: ");
-        String custFName = myScan.nextLine();
-        System.out.printf("Nachname: ");
-        String custLName = myScan.nextLine();
-
-        Customer cust = new Customer(custFName, custLName);
-        customersList.add(cust);
-        return cust;
-    }
-
-    public static Account newAccount(int custNum) {
-        Account acc = new Account(custNum);
-        accounts.add(acc);
-        return acc;
-    }
-
-    public static int giveCustNum() {
-        Scanner myScan = new Scanner(System.in);
-        System.out.printf("Bitte geben Sie Ihre Kundennummer ein: ");
-        return myScan.nextInt();
-    }
-
-    public static double giveAmmount() {
-        Scanner myScan = new Scanner(System.in);
-        System.out.printf("Bitte gib den Betrag ein: ");
-        return myScan.nextDouble();
-    }
-
-    public static int giveAccNum() {
-        Scanner myScan = new Scanner(System.in);
-        System.out.printf("Bitte gib die Kontonummer ein: ");
-        return myScan.nextInt();
-    }
 
     public static void main(String[] args) {
         Customer cust1 = new Customer("Heinz", "Müller");
@@ -70,48 +23,48 @@ public class Main {
         double deposit;
 
         while (choice != 8) {
-            choice = input();
-            switch(choice) {
+            choice = Bank.input();
+            switch (choice) {
                 case 1:
-                    activeCust = newCustomer();
+                    activeCust = Bank.newCustomer();
                     activeCustNum = activeCust.getCustNum();
                     System.out.println(activeCust);
                     break;
                 case 2:
-                    activeCustNum = activeCustNum >= 0 ? activeCustNum : giveCustNum();
+                    activeCustNum = activeCustNum >= 0 ? activeCustNum : Customer.giveCustNum();
                     System.out.println(customersList.get(activeCustNum));
                     break;
                 case 3:
-                    activeCustNum = activeCustNum >= 0 ? activeCustNum : giveCustNum();
-                    activeAcc = newAccount(activeCustNum);
+                    activeCustNum = activeCustNum >= 0 ? activeCustNum : Customer.giveCustNum();
+                    activeAcc = Bank.newAccount(activeCustNum);
                     activeAccNum = activeAcc.getAccNum();
                     activeCust = customersList.get(activeCustNum);
                     activeCust.custAccList.add(activeAcc);
                     System.out.println(accounts.get(activeAcc.getAccNum()));
                     break;
                 case 4:
-                    activeAccNum = activeAccNum >= 0 ? activeAccNum : giveAccNum();
+                    activeAccNum = activeAccNum >= 0 ? activeAccNum : Account.giveAccNum();
                     activeAcc = accounts.get(activeAccNum);
-                    deposit = giveAmmount();
+                    deposit = Bank.giveAmmount();
                     activeAcc.setBalance(activeAcc.getBalance() + deposit);
                     System.out.printf("Neuer Betrag: %.2f Euro%n", activeAcc.getBalance());
                     activeCustNum = activeAcc.getCust();
                     activeCust = customersList.get(activeCustNum);
                     break;
                 case 5:
-                    activeAccNum = activeAccNum >= 0 ? activeAccNum : giveAccNum();
+                    activeAccNum = activeAccNum >= 0 ? activeAccNum : Account.giveAccNum();
                     activeAcc = accounts.get(activeAccNum);
-                    deposit = giveAmmount();
+                    deposit = Bank.giveAmmount();
                     activeAcc.setBalance(activeAcc.getBalance() - deposit);
                     System.out.printf("Neuer Betrag: %.2f Euro%n", activeAcc.getBalance());
                     activeCustNum = activeAcc.getCust();
                     activeCust = customersList.get(activeCustNum);
                     break;
                 case 6:
-                    activeAccNum = activeAccNum >= 0 ? activeAccNum : giveAccNum();
+                    activeAccNum = activeAccNum >= 0 ? activeAccNum : Account.giveAccNum();
                     activeAcc = accounts.get(activeAccNum);
-                    deposit = giveAmmount();
-                    Account sendAcc = accounts.get(giveAccNum());
+                    deposit = Bank.giveAmmount();
+                    Account sendAcc = accounts.get(Account.giveAccNum());
                     activeAcc.setBalance(activeAcc.getBalance() - deposit);
                     sendAcc.setBalance(sendAcc.getBalance() + deposit);
                     System.out.printf("%.2f Euro gesendet. Neuer Kontostand: %.2f%n", deposit, activeAcc.getBalance());

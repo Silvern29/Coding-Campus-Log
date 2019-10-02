@@ -1,21 +1,18 @@
 package at.redlinghaus;
 
-import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Customer {
+    public LinkedList<Account> custAccList = new LinkedList<>();
     private int custNum;
     private String fName;
     private String lName;
 
-    public LinkedList<Account> custAccList = new LinkedList<>();
-    public static LinkedList<Customer> customersList = new LinkedList<>();
-
-    private static int nextCustomerNumber = 0;
     public Customer(String firstName, String lastName) {
         fName = firstName;
         lName = lastName;
-        custNum = Customer.nextCustomerNumber++;
+        custNum = Bank.nextCustomerNumber++;
     }
 
     @Override
@@ -39,14 +36,6 @@ public class Customer {
         this.custAccList = custAccList;
     }
 
-    public static LinkedList<Customer> getCustomersList() {
-        return customersList;
-    }
-
-    public static void setCustomersList(LinkedList<Customer> customersList) {
-        Customer.customersList = customersList;
-    }
-
     public String getfName() {
         return fName;
     }
@@ -61,5 +50,11 @@ public class Customer {
 
     public void setlName(String lName) {
         this.lName = lName;
+    }
+
+    public static int giveCustNum() {
+        Scanner myScan = new Scanner(System.in);
+        System.out.printf("Bitte geben Sie Ihre Kundennummer ein: ");
+        return myScan.nextInt();
     }
 }

@@ -1,21 +1,17 @@
 package at.redlinghaus;
 
-import java.util.LinkedList;
+import java.util.Scanner;
 
-import static at.redlinghaus.Customer.customersList;
+import static at.redlinghaus.Bank.customersList;
 
 public class Account {
     private int accNum;
     private int cust;
     private double balance;
-    private static int nextAccountNumber = 0;
-
-    public static LinkedList<Account> accounts = new LinkedList<>();
-
 
     public Account(int custNum) {
         cust = custNum;
-        accNum = Account.nextAccountNumber++;
+        accNum = Bank.nextAccountNumber++;
         balance = 0;
     }
 
@@ -49,5 +45,11 @@ public class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public static int giveAccNum() {
+        Scanner myScan = new Scanner(System.in);
+        System.out.printf("Bitte gib die Kontonummer ein: ");
+        return myScan.nextInt();
     }
 }

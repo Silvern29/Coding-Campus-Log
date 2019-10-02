@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int maxNum = 100000000;
-        int count = 100000000;
+        int maxNum = 10;
+        int count = 10;
 
         int[] start = new int[count];
         for (int i = 0; i < start.length; i++) {
