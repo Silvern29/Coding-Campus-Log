@@ -3,12 +3,12 @@ package com.company;
 public class Bowling {
     public int[] gameChart = {10, 3, 8, 6, 4, 7, 9, 1, 0, 5, 2};
 
-    public void bowling(boolean isNotDrunk, int drinks) {
-        if (isNotDrunk) {
+    public void bowling(int drinks) {
+        if (drinks < 4) {
             for (int i : gameChart) {
                 System.out.println(cheer(i));
             }
-            int rnd = (int) Math.floor(Math.random()*3);
+            int rnd = (int) Math.floor(Math.random()*3)+1;
             switch (rnd) {
                 case 1:
                     pullUpsFor(20);
