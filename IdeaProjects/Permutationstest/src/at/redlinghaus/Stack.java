@@ -33,6 +33,6 @@ public class Stack {
     }
 
     public boolean isEmpty(){
-        return --stackIndex <= 0;
+        return stackIndex - 1 < 0;
     }
 }
