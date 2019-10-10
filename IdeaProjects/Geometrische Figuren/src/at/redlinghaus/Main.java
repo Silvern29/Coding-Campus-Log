@@ -11,13 +11,26 @@ public class Main {
         Point myP2 = new Point(4,5);
         Rectangular myRectang1 = new Rectangular(myP1, myP2);
 
-//        myPrint.draw(myRectang1);
 
-        myRectang1.moveRectang(10, 6);
-        myPrint.draw(myRectang1.p1);
-        myPrint.draw(myRectang1.p2);
-        myPrint.draw(myRectang1.p3);
-        myPrint.draw(myRectang1.p4);
+        myPrint.draw(myRectang1);
+        System.out.println("____________________________________________________________");
+        myRectang1.moveR(10, 6);
+        myPrint.draw(myRectang1);
+        System.out.println("____________________________________________________________");
+        myRectang1.rotate(myRectang1.p1);
+        myPrint.draw(myRectang1);
+        System.out.println("____________________________________________________________");
+        myRectang1.rotate(myRectang1.p1);
+        myPrint.draw(myRectang1);
+        System.out.println("____________________________________________________________");
+
+
+
+
+//        myPrint.draw(myRectang1.p1);
+//        myPrint.draw(myRectang1.p2);
+//        myPrint.draw(myRectang1.p3);
+//        myPrint.draw(myRectang1.p4);
 
     }
 }

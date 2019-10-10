@@ -22,9 +22,9 @@ public class Printer {
         for (int i = 0; i <= maxY; i++){
             for (int j = 0; j <= maxX; j++) {
                 if (j >= minX && i >= minY && j <= maxX && i <= maxY) {
-                    System.out.print("#");
+                    System.out.print(" # ");
                 } else {
-                    System.out.print(" ");
+                    System.out.print("   ");
                 }
             }
             System.out.println();
