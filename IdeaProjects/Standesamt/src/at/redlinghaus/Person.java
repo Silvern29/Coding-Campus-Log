@@ -6,11 +6,23 @@ public class Person {
     private int age;
     private boolean isMarried;
 
-    Person (String firstName, String lastName, int age) {
+    Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.isMarried = false;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public boolean isMarried() {
+        return isMarried;
+    }
+
+    public void setMarried(boolean married) {
+        isMarried = married;
     }
 
     @Override
@@ -21,17 +33,5 @@ public class Person {
                 ", age=" + age +
                 ", isMarried=" + isMarried +
                 '}';
-    }
-
-    public int getAge(){
-        return this.age;
-    }
-
-    public boolean isMarried() {
-        return isMarried;
-    }
-
-    public void setMarried(boolean married) {
-        isMarried = married;
     }
 }

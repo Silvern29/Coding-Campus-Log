@@ -8,7 +8,7 @@ public class Team {
     private int rank;
     private boolean status;
     private int nextPlayerNumber;
-    private List<Player>teamPlayers;
+    private List<Player> teamPlayers;
     private Tournament actualTournament;
 
     private int goalDiv;

@@ -15,7 +15,7 @@ public class Amt {
 
     public void setApp(String app) {
         boolean isFree = true;
-        for( String el : appoint){
+        for(String el : appoint){
             if(app.equals(el)){
                 isFree = false;
             }
@@ -32,7 +32,7 @@ public class Amt {
     }
 
     public boolean isMarried (Person p1, Person p2) {
-        return p1.isMarried() && p2.isMarried();
+        return p1.isMarried() || p2.isMarried();
     }
 
     public Ehe marry(Person p1, Person p2) {

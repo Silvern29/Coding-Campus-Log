@@ -3,12 +3,12 @@ package at.redlinghaus;
 import java.util.*;
 
 public class Tournament {
-    private int teamCount = 16;
+    private int teamCount;
     private int matchCount = 15;
-    private int roundCount = 4;
+    private int roundCount;
     private LinkedList<Team> teams;
-    Team[] ranking = new Team[16];
-    int actualRank = 15;
+    Team[] ranking;
+    int actualRank = teamCount-1;
 
     public Tournament(){
         this.teams = new LinkedList<>();
@@ -26,6 +26,7 @@ public class Tournament {
             actualMatch.play();
             round.add(actualMatch);
             loosersBracket[z] = actualMatch.getLooser();
+            z++;
         }
         for (int y = 0; y < loosersBracket.length - 1; y++) {
             for (int x = y + 1; x < loosersBracket.length; x++) {
@@ -41,20 +42,38 @@ public class Tournament {
             ranking[y] = loosersBracket[z];
             z++;
         }
-        System.out.println(round.toString());
+
+        for (Match el : round) {
+            System.out.print(el + " | ");
+        }
+        System.out.println();
+        System.out.println();
     }
 
-    public void playTournament(){
-        for (int i = 0; i < roundCount; i++){
-            this.playRound();
-        }
-        for(int i = 0; i < ranking.length; i++){
-            System.out.println(i+1 + ". Platz - " + ranking[i]);
+    public void playTournament(int teamCount){
+        if (teamCountIsCorrect(teamCount)){
+            for (int i = 0; i < roundCount; i++){
+                System.out.println("Ergebnisse der aktuellen Runde: ");
+                this.playRound();
+            }
+            ranking[0] = teams.get(0);
+            for(int i = 0; i < ranking.length; i++){
+                System.out.println(i+1 + ". Platz - " + ranking[i]);
+            }
+        } else {
+            System.out.println("Teamanzahl ist nicht korrekt!");
         }
     }
 
-    public void ranking(Match match){
-
+    public boolean teamCountIsCorrect (int teamCount){
+        for ( int i=0; i<9; i++){
+            if(Math.pow(2, i) == teamCount) {
+                roundCount = i;
+                ranking = new Team[teamCount];
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addteam(String name) {

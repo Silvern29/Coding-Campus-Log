@@ -11,6 +11,7 @@ public class Main {
 
         myAmt.setApp("22.10.2019");
         myAmt.setApp("23.10.2019");
+        myAmt.setApp("23.10.2019");
         myAmt.getApp();
 
         Ehe myMarry = myAmt.marry(p1,p2);
