@@ -1,7 +1,5 @@
 package at.redlinghaus;
 
-import java.util.ResourceBundle;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +7,7 @@ public class Main {
         Printer myPrint = new Printer();
         Point myP1 = new Point(0,0);
         Point myP2 = new Point(4,5);
-        Rectangular myRectang1 = new Rectangular(myP1, myP2);
+        Rectangle myRectang1 = new Rectangle(myP1, myP2);
 
 
         myPrint.draw(myRectang1);
@@ -17,10 +15,10 @@ public class Main {
         myRectang1.moveR(10, 6);
         myPrint.draw(myRectang1);
         System.out.println("____________________________________________________________");
-        myRectang1.rotate(myRectang1.p1);
+        myRectang1.rotateRight(myRectang1.p1);
         myPrint.draw(myRectang1);
         System.out.println("____________________________________________________________");
-        myRectang1.rotate(myRectang1.p1);
+        myRectang1.rotateRight(myRectang1.p1);
         myPrint.draw(myRectang1);
         System.out.println("____________________________________________________________");
 

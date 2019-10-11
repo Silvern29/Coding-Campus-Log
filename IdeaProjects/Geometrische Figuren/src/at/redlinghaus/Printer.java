@@ -14,7 +14,7 @@ public class Printer {
         }
     }
 
-    public void draw(Rectangular rect) {
+    public void draw(Rectangle rect) {
         int minY = Math.min(rect.p1.getY(), rect.p3.getY());
         int maxY = Math.max(rect.p1.getY(), rect.p3.getY());
         int minX = Math.min(rect.p1.getX(), rect.p3.getX());
