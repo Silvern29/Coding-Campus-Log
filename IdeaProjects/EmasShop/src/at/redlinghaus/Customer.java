@@ -2,23 +2,24 @@ package at.redlinghaus;
 
 public class Customer {
 
-    private String name;
     private String payment;
     private  int custNum;
     private double account;
     private Cart custCart;
 
-    public Customer(String name, String payment, double account) {
-        this.name = name;
+    public Customer(String payment, double account, Shop shop) {
         this.payment = payment;
-        this.custNum = Shop.custNum++;
+        this.custNum = shop.newCustNum();
         this.account = account;
         this.custCart = new Cart();
-        Shop.customerList.add(this);
     }
 
-    public String getName() {
-        return name;
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public void setAccount(double account) {
+        this.account = account;
     }
 
     public String getPayment() {
@@ -37,11 +38,12 @@ public class Customer {
         return custCart;
     }
 
-    public void pay() {
+    public boolean pay() {
         if(custCart.getTotal() < account) {
             account -= custCart.getTotal();
+            return true; /*String.format("%6.2f €",custCart.getTotal())*/
         } else {
-            System.out.println("Dein Geld reicht leider nicht aus!");
+            return false;
         }
     }
 }

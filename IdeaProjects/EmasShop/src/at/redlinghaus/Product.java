@@ -8,12 +8,11 @@ public class Product {
     public Product(String productName, double price){
         this.price = price;
         this.productName = productName;
-        Shop.productList.add(this);
     }
 
     @Override
     public String toString() {
-        return productName + " - " + price + " €";
+        return String.format("  %-12s %6.2f €", productName, price);
     }
 
     public String getProductName() {
