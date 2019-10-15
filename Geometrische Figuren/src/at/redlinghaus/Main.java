@@ -15,10 +15,10 @@ public class Main {
         myRectang1.moveR(10, 6);
         myPrint.draw(myRectang1);
         System.out.println("____________________________________________________________");
-        myRectang1.rotateRight(myRectang1.p1);
+        myRectang1.rotateRight(1);
         myPrint.draw(myRectang1);
         System.out.println("____________________________________________________________");
-        myRectang1.rotateRight(myRectang1.p1);
+        myRectang1.rotateRight(2);
         myPrint.draw(myRectang1);
         System.out.println("____________________________________________________________");
 

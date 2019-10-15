@@ -1,6 +1,7 @@
 package at.redlinghaus;
 
-import static at.redlinghaus.Main.myCameras;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Camera {
     private String brand;
@@ -9,10 +10,12 @@ public class Camera {
     private String displaySize;
     private boolean isStable;
     private boolean isColor = true;
+    private int focalDistance;
     private int focalDistanceMin;
     private int focalDistanceMax;
-    private Objective actualObjective;
+    private Lens actualLens;
     private int nextPic;
+    private List<Photo> photoCache;
 
     public Camera(String brand, String model, String displaySize, boolean isStable, int focalMin, int focalMax) {
         this.brand = brand;
@@ -20,10 +23,17 @@ public class Camera {
         this.displaySize = displaySize;
         this.megaPixel = (Integer.parseInt(this.displaySize.substring(0, this.displaySize.indexOf("x"))) * Integer.parseInt(this.displaySize.substring(this.displaySize.indexOf("x") + 1))) / 1000000;
         this.isStable = isStable;
-        this.actualObjective = new Objective(brand, focalMin, focalMax);
         this.focalDistanceMin = focalMin;
         this.focalDistanceMax = focalMax;
-        myCameras.add(this);
+        photoCache = new LinkedList<>();
+    }
+
+    public List<Photo> getPhotoCache() {
+        return photoCache;
+    }
+
+    public void addPhotoToCache(Photo newPhoto) {
+        this.photoCache.add(newPhoto);
     }
 
     public int getNextPic() {
@@ -66,14 +76,33 @@ public class Camera {
         isColor = color;
     }
 
-    public Objective getActualObjective() {
-        return actualObjective;
+    public double getMegaPixel() {
+        return megaPixel;
     }
 
-    public void setActualObjective(Objective actualObjective) {
-        this.actualObjective = actualObjective;
-        this.setFocalDistanceMin(actualObjective.getFocalDistanceMin());
-        this.setFocalDistanceMax(actualObjective.getFocalDistanceMax());
+    public void setMegaPixel(double megaPixel) {
+        this.megaPixel = megaPixel;
+    }
+
+    public Lens getActualLens() {
+        return actualLens;
+    }
+
+    public void switchLens(Lens newLens) {
+        if (!newLens.isInUse()) {
+            if (newLens.getFocalDistanceMin() >= this.getFocalDistanceMin() && newLens.getFocalDistanceMax() <= this.getFocalDistanceMax()) {
+                if(this.actualLens != null){
+                    this.actualLens.setInUse(false);
+                }
+                this.actualLens = newLens;
+                newLens.setInUse(true);
+                this.setFocalDistance(newLens.getFocalDistanceMin());
+            } else {
+                System.out.println("Kamera und Objektiv sind nicht kompatibel!");
+            }
+        } else {
+                System.out.println("Objektiv ist nicht verfügbar!");
+        }
     }
 
     public boolean isStable() {
@@ -100,23 +129,34 @@ public class Camera {
         this.focalDistanceMax = focalDistanceMax;
     }
 
-    @Override
-    public String toString() {
-        return "Camera{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", megaPixel=" + megaPixel +
-                ", displaySize='" + displaySize + '\'' +
-                ", isStable=" + isStable +
-                ", isColor=" + isColor +
-                ", focalDistanceMin=" + focalDistanceMin +
-                ", focalDistanceMax=" + focalDistanceMax +
-                ", actualObjective=" + actualObjective +
-                '}';
+    public int getFocalDistance() {
+        return focalDistance;
+    }
+
+    public void setFocalDistance(int focalDistance) {
+        this.focalDistance = focalDistance;
     }
 
     public void takePhoto() {
-        System.out.println("Click!");
-        new Photo(this);
+        if(actualLens != null) {
+            System.out.println("Click!");
+            Photo tmp = new Photo(this);
+            this.addPhotoToCache(tmp);
+        } else {
+            System.out.println("Bitte ein Objektiv aufsetzen!");
+        }
+    }
+
+    public String printPhotoCache(){
+        String cacheString = "";
+        for (Photo i : this.getPhotoCache()) {
+            cacheString += i + " \n";
+        }
+        return cacheString;
+    }
+
+    @Override
+    public String toString() {
+        return "Kamera " + brand + " " + model + " " + megaPixel + " MP, " + displaySize + ", isStable " + isStable + ", " + focalDistanceMin + "mm - " + focalDistanceMax + "mm" + '\n' + actualLens + '\n' + printPhotoCache();
     }
 }

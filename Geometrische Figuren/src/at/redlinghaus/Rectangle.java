@@ -29,16 +29,32 @@ public class Rectangle {
     public void moveR(int xMove, int yMove) {
         this.p1.setX(this.p1.getX() + xMove);
         this.p1.setY(this.p1.getY() + yMove);
+        this.p2.setX(this.p2.getX() + xMove);
+        this.p2.setY(this.p2.getY() + yMove);
         this.p3.setX(this.p3.getX() + xMove);
         this.p3.setY(this.p3.getY() + yMove);
+        this.p4.setX(this.p4.getX() + xMove);
+        this.p4.setY(this.p4.getY() + yMove);
     }
 
-    public void rotateRight(int drehPunkt) {
-//        if(drehPunkt.equals(p1) || drehPunkt.equals(p2) || drehPunkt.equals(p3) || drehPunkt.equals(p4)) {
-        this.p1 = points.get(drehPunkt);
+    public void rotateRight(int indexAngle) {
+//        if(angle.equals(p1) || drehPunkt.equals(p2) || drehPunkt.equals(p3) || drehPunkt.equals(p4)) {
+        this.p1 = points.get(indexAngle);
+        this.p2 = points.get((indexAngle + 1) % 4);
+        this.p3 = points.get((indexAngle + 2) % 4);
+        this.p4 = points.get((indexAngle + 3) % 4);
 
-        this.p3.setX(drehPunkt.getX() - Math.abs(drehPunkt.getY() - this.p3.getY()));
-        this.p3.setY(drehPunkt.getY() + Math.abs(drehPunkt.getX() - this.p3.getX()));
+        int a = Math.abs(p1.getX() - p3.getX());
+        int b = Math.abs(p1.getY() - p3.getY());
+
+        this.p2.setX(p1.getX());
+        this.p2.setY(p1.getY() - a);
+
+        this.p3.setX(p1.getX() + a);
+        this.p3.setY(p1.getY() - b);
+
+        this.p4.setX(p1.getX() + b);
+        this.p4.setY(p1.getY());
 //        } else {
 //            System.out.println("Der Punkt ist kein Eckpunkt des Rechtecks");
 //        }
