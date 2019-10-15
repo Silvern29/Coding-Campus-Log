@@ -1,17 +1,29 @@
 package at.redlinghaus;
 
-import static at.redlinghaus.Main.myObjectives;
-
-public class Objective {
+public class Lens {
     private String brand;
     private int focalDistanceMin;
     private int focalDistanceMax;
+    private boolean isInUse = false;
 
-    public Objective(String brand, int focalMin, int focalMax) {
+    public Lens(String brand, int focalMin, int focalMax) {
         this.brand = brand;
         this.focalDistanceMin = focalMin;
         this.focalDistanceMax = focalMax;
-        myObjectives.add(this);
+    }
+
+    public Lens(String brand, int focal) {
+        this.brand = brand;
+        this.focalDistanceMin = focal;
+        this.focalDistanceMax = focal;
+    }
+
+    public boolean isInUse() {
+        return isInUse;
+    }
+
+    public void setInUse(boolean inUse) {
+        isInUse = inUse;
     }
 
     public String getBrand() {
@@ -40,11 +52,7 @@ public class Objective {
 
     @Override
     public String toString() {
-        return "Objective{" +
-                "brand='" + brand + '\'' +
-                ", focalDistanceMin=" + focalDistanceMin +
-                ", focalDistanceMax=" + focalDistanceMax +
-                '}';
+        return "Objektiv " + brand + " " + focalDistanceMin + "mm - " + focalDistanceMax + "mm";
     }
 
 }
