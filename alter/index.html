@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>berechne dein Alter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        * {
+            font-family: sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        div {
+            height: 50px;
+            width: 0;
+            padding: 20px 10px 10px 10px;
+        }
+
+        #avgm {
+            background-color: lightblue;
+        }
+
+        #avgw {
+            background-color: lightgreen;
+        }
+
+        #oldest {
+            background-color: grey;
+        }
+
+        #balken {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="oldest">Der älteste Mensch wurde 122 Jahre alt</div>
+    <div id="avgw">Die Durschnittliche Lebenserwartung für Frauen ist 84 Jahre</div>
+    <div id="avgm">Die Durschnittliche Lebenserwartung für Männer ist 79 Jahre</div>
+    <div id="balken"></div>
+</body>
+
+<script>
+    var win = $(window).width();
+
+    $("#oldest").width(win - 20);
+
+    var men = win / 122 * 79;
+    $("#avgm").width(men - 20);
+
+    var wom = win / 122 * 84;
+    $("#avgw").width(wom - 20);
+
+    var ges = prompt("Bist du männlich oder weiblich? (m/w)");
+
+    if (ges === "m") {
+        $("#avgw").hide();
+    } else if (ges === "w") {
+        $("#avgm").hide();
+    }
+
+    var geb = prompt("Bitte gib dein Geburtsjahr ein:");
+    geb = 2019 - geb;
+    var perc = win / 122 * geb;
+
+    $("#balken").width(perc - 20).html("Du bist " + geb + " Jahre alt");
+</script>
+
+</html>
