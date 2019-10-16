@@ -10,6 +10,7 @@ public class Game {
     Scanner myScan;
     Renderer myRend;
     int moves = 0;
+    Grid myGrid;
 
     public Game(){
         myTroll = new Trolley();
@@ -18,11 +19,12 @@ public class Game {
         myRend = new Renderer(myStock.getMatrix());
         changePosition(0,0);
         quake();
+        myGrid = new Grid(myStock.getMatrix());
     }
 
     public void play(){
         while(!myStock.isEmpty()) {
-            myRend.render();
+//            myRend.render();
             input();
             if (pTrolleyY == 0 && pTrolleyX == 0){
                 myTroll.unload(myStock);
@@ -32,7 +34,10 @@ public class Game {
             }
             moves++;
         }
-        myRend.render();
+        myGrid.getPane().revalidate();
+        myGrid.getPane().repaint();
+//        new Grid(myStock.getMatrix());
+//        myRend.render();
         System.out.println("Congratulation! The work is done in " + moves + " moves!");
     }
 
@@ -46,7 +51,7 @@ public class Game {
     }
 
     public void quake(){
-        for(int k = 0; k < 5; k++) {
+        for(int k = 0; k < 10; k++) {
             int i = (int) Math.floor(Math.random()*9);
             int j = (int) Math.floor(Math.random()*9);
             myStock.getMatrix()[i][j].getProductsOnField().add(new Product());
