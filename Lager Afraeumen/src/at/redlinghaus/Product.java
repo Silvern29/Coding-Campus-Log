@@ -1,0 +1,22 @@
+package at.redlinghaus;
+
+public class Product {
+    private int weight = 1;
+
+    public Product(){
+        weight = (int) Math.floor(Math.random()*4);
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Product " + weight + "kg";
+    }
+}
