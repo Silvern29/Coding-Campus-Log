@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8094e93a-e79b-4cae-863f-d2c85c91484f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Calc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Photography/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/Photography.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/Photography.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Objective.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Photo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/out/production/Photography/at/redlinghaus/Photo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Objective.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Lens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Photo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Photography/src/at/redlinghaus/Photo.java" afterDir="false" />
-    </list>
+    <list default="true" id="8094e93a-e79b-4cae-863f-d2c85c91484f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571123636943</updated>
-      <workItem from="1571123642860" duration="4347000" />
-      <workItem from="1571145075978" duration="625000" />
+      <workItem from="1571123642860" duration="3252000" />
     </task>
     <servers />
   </component>
@@ -103,9 +90,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

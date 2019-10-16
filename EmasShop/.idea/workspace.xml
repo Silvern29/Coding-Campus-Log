@@ -35,7 +35,6 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,7 +83,6 @@
       <option name="presentableId" value="Default" />
       <updated>1571036576939</updated>
       <workItem from="1571036581683" duration="16678000" />
-      <workItem from="1571121048673" duration="1194000" />
     </task>
     <servers />
   </component>
@@ -96,9 +94,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
