@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 public class Grid {
     private TestPane pane;
@@ -11,7 +12,11 @@ public class Grid {
 
     public Grid(Game game) {
         JFrame frame = new JFrame("Lager aufrämen");
-        this.pane = new TestPane(game.getMyStock().getMatrix());
+        try {
+            this.pane = new TestPane(game.getMyStock().getMatrix());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         EventQueue.invokeLater(new Runnable() {
             @Override

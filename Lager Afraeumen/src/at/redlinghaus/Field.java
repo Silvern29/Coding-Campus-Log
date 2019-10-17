@@ -30,6 +30,6 @@ public class Field {
 
     @Override
     public String toString() {
-        return "Field " + '\n' + trolleyOnField + '\n' + "Products " + productsOnField;
+        return "Field " + trolleyOnField + "Products " + productsOnField;
     }
 }

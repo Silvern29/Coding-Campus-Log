@@ -4,7 +4,7 @@ public class Product {
     private int weight;
 
     public Product() {
-        weight = (int) Math.floor(Math.random() * 4);
+        weight = (int) Math.floor(Math.random() * 6);
     }
 
     public int getWeight() {

@@ -4,8 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Trolley {
-    private final int MAX_WEIGHT = 20;
+    private final int MAX_WEIGHT = 5;
     private int weight = 0;
+
     private List<Product> load = new LinkedList<>();
 
     public void pickUp(Field field) {
@@ -28,6 +29,18 @@ public class Trolley {
         stock.getMatrix()[0][0].getProductsOnField().addAll(this.load);
         load.clear();
         weight = 0;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public List<Product> getLoad() {
+        return load;
+    }
+
+    public void setLoad(List<Product> load) {
+        this.load = load;
     }
 
     @Override
