@@ -11,7 +11,7 @@ public class Grid {
     private int key;
 
     public Grid(Game game) {
-        JFrame frame = new JFrame("Lager aufrämen");
+        JFrame frame = new JFrame("Lager aufräumen");
         try {
             this.pane = new TestPane(game.getMyStock().getMatrix());
         } catch (IOException e) {
@@ -35,10 +35,12 @@ public class Grid {
                 frame.addKeyListener(new KeyListener() {
 
                     @Override
-                    public void keyTyped(KeyEvent e) {}
+                    public void keyTyped(KeyEvent e) {
+                    }
 
                     @Override
-                    public void keyReleased(KeyEvent e) {}
+                    public void keyReleased(KeyEvent e) {
+                    }
 
                     @Override
                     public void keyPressed(KeyEvent e) {
