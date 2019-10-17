@@ -1,48 +1,42 @@
 package at.redlinghaus;
 
-import java.util.Scanner;
+import java.awt.event.KeyEvent;
 
 public class Game {
+    private Trolley myTroll;
+    private Stock myStock;
+    private int moves = 0;
+    private Grid myGrid;
     private int pTrolleyY = 0;
     private int pTrolleyX = 0;
-    Trolley myTroll;
-    Stock myStock;
-    Scanner myScan;
-    Renderer myRend;
-    int moves = 0;
-    Grid myGrid;
 
-    public Game(){
+    public Game() {
         myTroll = new Trolley();
         myStock = new Stock();
-        myScan = new Scanner(System.in);
-        myRend = new Renderer(myStock.getMatrix());
-        changePosition(0,0);
+        changePosition(0, 0);
         quake();
-        myGrid = new Grid(myStock.getMatrix());
+        myGrid = new Grid(this);
     }
 
-    public void play(){
-        while(!myStock.isEmpty()) {
-//            myRend.render();
-            input();
-            if (pTrolleyY == 0 && pTrolleyX == 0){
-                myTroll.unload(myStock);
-                myStock.switchEmpty();
-            } else if (myStock.getMatrix()[pTrolleyY][pTrolleyX].getProductsOnField().size() > 0){
-                myTroll.pickUp(myStock.getMatrix()[pTrolleyY][pTrolleyX]);
-            }
-            moves++;
+    public void play() {
+        input(myGrid.getKey());
+        if (myStock.isEmpty()) {
+            System.out.println("Congratulation! The work is done in " + moves + " moves!");
+            System.exit(0);
         }
+        if (pTrolleyY == 0 && pTrolleyX == 0) {
+            myTroll.unload(myStock);
+            myStock.switchEmpty();
+        } else if (myStock.getMatrix()[pTrolleyY][pTrolleyX].getProductsOnField().size() > 0) {
+            myTroll.pickUp(myStock.getMatrix()[pTrolleyY][pTrolleyX]);
+        }
+        moves++;
         myGrid.getPane().revalidate();
         myGrid.getPane().repaint();
-//        new Grid(myStock.getMatrix());
-//        myRend.render();
-        System.out.println("Congratulation! The work is done in " + moves + " moves!");
     }
 
     public void changePosition(int y, int x) {
-        if(y >= 0 && y < myStock.getMatrix().length && x >= 0 && x < myStock.getMatrix()[0].length) {
+        if (y >= 0 && y < myStock.getMatrix().length && x >= 0 && x < myStock.getMatrix()[0].length) {
             myStock.getMatrix()[pTrolleyY][pTrolleyX].setTrolleyOnField(null);
             myStock.getMatrix()[y][x].setTrolleyOnField(myTroll);
             pTrolleyY = y;
@@ -50,28 +44,36 @@ public class Game {
         }
     }
 
-    public void quake(){
-        for(int k = 0; k < 10; k++) {
-            int i = (int) Math.floor(Math.random()*9);
-            int j = (int) Math.floor(Math.random()*9);
+    public void quake() {
+        for (int k = 0; k < 10; k++) {
+            int i = (int) Math.floor(Math.random() * 9);
+            int j = (int) Math.floor(Math.random() * 9);
             myStock.getMatrix()[i][j].getProductsOnField().add(new Product());
         }
     }
 
-    public void input(){
-        String key = "";
-        key = myScan.nextLine();
-        switch (key.toLowerCase()){
-            case "w": changePosition(pTrolleyY - 1, pTrolleyX);
-            break;
-            case "a": changePosition(pTrolleyY, pTrolleyX - 1);
-            break;
-            case "s": changePosition(pTrolleyY + 1, pTrolleyX);
-            break;
-            case "d": changePosition(pTrolleyY, pTrolleyX + 1);
-            break;
-            default: input();
+    public void input(int input) {
+        if (!myStock.isEmpty()) {
+            switch (input) {
+                case KeyEvent.VK_UP:
+                    changePosition(pTrolleyY - 1, pTrolleyX);
+                    break;
+                case KeyEvent.VK_LEFT:
+                    changePosition(pTrolleyY, pTrolleyX - 1);
+                    break;
+                case KeyEvent.VK_DOWN:
+                    changePosition(pTrolleyY + 1, pTrolleyX);
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    changePosition(pTrolleyY, pTrolleyX + 1);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
+    public Stock getMyStock() {
+        return myStock;
+    }
 }

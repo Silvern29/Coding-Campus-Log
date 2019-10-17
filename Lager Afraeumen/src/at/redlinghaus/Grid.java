@@ -1,15 +1,17 @@
 package at.redlinghaus;
 
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Grid {
     private TestPane pane;
+    private int key;
 
-    public Grid(Field[][] matrix) {
-        this.matrix = matrix;
-        this.pane = new TestPane(matrix);
-        JFrame frame = new JFrame("Testing");
+    public Grid(Game game) {
+        JFrame frame = new JFrame("Lager aufrämen");
+        this.pane = new TestPane(game.getMyStock().getMatrix());
 
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -25,25 +27,40 @@ public class Grid {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+                frame.addKeyListener(new KeyListener() {
+
+                    @Override
+                    public void keyTyped(KeyEvent e) {}
+
+                    @Override
+                    public void keyReleased(KeyEvent e) {}
+
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+                        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                            key = KeyEvent.VK_RIGHT;
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                            key = KeyEvent.VK_LEFT;
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_UP) {
+                            key = KeyEvent.VK_UP;
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                            key = KeyEvent.VK_DOWN;
+                        }
+                        game.play();
+                    }
+                });
             }
         });
-    }
-
-    private Field[][] matrix;
-
-    public Field[][] getMatrix() {
-        return matrix;
-    }
-
-    public void setMatrix(Field[][] matrix) {
-        this.matrix = matrix;
     }
 
     public TestPane getPane() {
         return pane;
     }
 
-    public void setPane(TestPane pane) {
-        this.pane = pane;
+    public int getKey() {
+        return key;
     }
 }
