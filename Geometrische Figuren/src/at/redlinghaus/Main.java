@@ -4,9 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Printer myPrint = new Printer();
         Point myP1 = new Point(0,0);
-        Point myP2 = new Point(4,5);
+        Point myP2 = new Point(8,4);
         Rectangle myRectang1 = new Rectangle(myP1, myP2);
 
 
