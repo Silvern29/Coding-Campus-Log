@@ -1,7 +1,8 @@
 package at.redlinghaus;
 
 public class Rectangle {
-    private int a, b, c, absA, absB;
+    private int a, b, absA, absB;
+    private double d;
     private Point m;
     private Point p1, p2, p3, p4;
     private Point[] points = new Point[4];
@@ -17,7 +18,7 @@ public class Rectangle {
         points[3] = p4;
     }
 
-    public void moveR(int xMove, int yMove) {
+    public void move(int xMove, int yMove) {
         this.p1.setX(this.p1.getX() + xMove);
         this.p1.setY(this.p1.getY() + yMove);
         this.p2.setX(this.p2.getX() + xMove);
@@ -34,7 +35,7 @@ public class Rectangle {
         this.absB = Math.abs(p1.getY() - p3.getY());
         this.a = p1.getX() - p3.getX();
         this.b = p1.getY() - p3.getY();
-        this.c = (int) Math.sqrt(absA*absA + absB*absB);
+        this.d = Math.sqrt(absA*absA + absB*absB);
     }
 
     public Point findCounterP (Point angleP) {
@@ -98,6 +99,50 @@ public class Rectangle {
             System.out.println("Der Punkt ist kein Eckpunkt des Rechtecks");
         }
         Printer.draw(this);
+    }
+
+    public void rotateRight(Point angleP) {
+        this.p1 = angleP;
+        this.p3 = this.findCounterP(angleP);
+        updateSides();
+
+        if (p3 != null) {
+            this.p3.setX(p1.getX() + b);
+            this.p3.setY(p1.getY() - a);
+
+            if (p1.getY() == p2.getY()) {
+                this.p2.setX(p1.getX() + b);
+                this.p2.setY(p1.getY());
+            } else if (p1.getX() == p2.getX()) {
+                this.p2.setX(p1.getX());
+                this.p2.setY(p1.getY() - a);
+            }
+            if (p1.getY() == p4.getY()) {
+                this.p4.setX(p1.getX() + b);
+                this.p4.setY(p1.getY());
+            } else if (p1.getX() == p4.getX()) {
+                this.p4.setX(p1.getX());
+                this.p4.setY(p1.getY() - a);
+            }
+        } else {
+            System.out.println("Der Punkt ist kein Eckpunkt des Rechtecks");
+        }
+        Printer.draw(this);
+    }
+
+    public boolean isSquare(){
+        updateSides();
+        return a == b;
+    }
+
+    public Circle circumCircle(){
+        updateSides();
+        m = new Point((p1.getX() + p3.getX()) / 2, (p1.getY() + p3.getY()) / 2);
+        return new Circle(d / 2.0, m);
+    }
+
+    public void scale(int factor){
+
     }
 
     public Point[] getPoints() {

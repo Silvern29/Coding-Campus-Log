@@ -10,10 +10,14 @@ public class Main {
 
 
         Printer.draw(myRectang1);
-        myRectang1.moveR(10, 10);
-        myRectang1.rotateLeft(myP2);
-        myRectang1.rotateLeft(myP2);
-        myRectang1.rotateLeft(myP2);
-        myRectang1.rotateLeft(myP2);
+        myRectang1.move(10, 10);
+        myRectang1.rotateLeft(myP1);
+        myRectang1.rotateRight(myP1);
+
+        System.out.println(myRectang1.isSquare() ? "Es handelt sich um ein Quadrat" : "Dies ist kein Quadrat");
+        System.out.printf("Der Umkreis ist: %s", myRectang1.circumCircle());
+//        myRectang1.rotateLeft(myP2);
+//        myRectang1.rotateLeft(myP2);
+//        myRectang1.rotateLeft(myP2);
     }
 }
