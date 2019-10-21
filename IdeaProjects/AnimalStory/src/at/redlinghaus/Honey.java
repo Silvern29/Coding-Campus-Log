@@ -1,10 +1,8 @@
 package at.redlinghaus;
 
-public class Honey extends StaticThing {
-    boolean isSweet;
+public class Honey extends Food {
 
-    public Honey(int height, int weight, int width, int length) {
-        super(height, weight, width, length);
-        isEatable = true;
+    public Honey(String name, double height, double width, double length, double weight) {
+        super(name, height, weight, width, length);
     }
 }

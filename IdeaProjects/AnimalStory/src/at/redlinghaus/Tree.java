@@ -1,10 +1,12 @@
 package at.redlinghaus;
 
 public class Tree extends StaticThing {
-    boolean hasPot;
+    protected boolean holdsPot;
+    protected Pot potOnTheTree;
 
-    public Tree(int height, int weight, int width, int length, boolean hasPot) {
+    public Tree(double height, double width, double length, double weight, boolean holdsPot) {
         super(height, weight, width, length);
-        this.hasPot = hasPot;
+        this.holdsPot = holdsPot;
+        potOnTheTree = holdsPot ? new Pot(0.2, 0.1, 0.1, 0.5) : null;
     }
 }
