@@ -4,8 +4,8 @@ public class StoryInTheWoods {
 
 
     public void play() {
-        Bear bear = new Bear("BobbyTheBear", 3, 2, 2, 500);
-        Eagle eagle = new Eagle("EddyTheEagle", 0.5, 2, 1, 20);
+        Bear bear = new Bear("Max", 3, 2, 2, 500);
+        Eagle eagle = new Eagle("Adrian", 0.5, 2, 1, 20);
         Bee bee = new Bee("Maja", 0.01, 0.01, 0.01, 0.01);
 
         Tree tree = new Tree(5, 2, 2, 20, true);
@@ -36,5 +36,7 @@ public class StoryInTheWoods {
 
         bear.wakeUp();
         bear.eat();
+
+
     }
 }
