@@ -1,7 +1,8 @@
 package at.redlinghaus;
 
-abstract public class Food extends StaticThing{
-    String name;
+abstract public class Food extends StaticThing {
+    protected String name;
+
     public Food(String name, double height, double width, double length, double weight) {
         super(height, width, length, weight);
         this.name = name;

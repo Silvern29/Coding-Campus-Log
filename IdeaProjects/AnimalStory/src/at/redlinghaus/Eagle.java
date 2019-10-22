@@ -10,25 +10,24 @@ public class Eagle extends Animal {
         foods[2] = new EagleFood("Snake puree", 0.2, 0.1, 0.3, 0.5);
     }
 
-    public void help (){
+    public void help() {
         System.out.println(this + "offers his help to the bear!");
     }
 
-    public Pot getHoney (Tree tree) {
-        System.out.println(this + "gets the honey pot from the tree and gives it.");
-        Pot pot = tree.potOnTheTree;
-        tree.potOnTheTree = null;
-        return pot;
+    public void getHoney(Tree tree, Bear bear) {
+        System.out.println(this + "gets the honey from the tree and brings it down.");
+        bear.setFood(tree.getHiveOnTheTree().getHiveContent());
+        tree.getHiveOnTheTree().getHiveContent().weight = 0;
     }
 
     @Override
     public void move() {
-        System.out.println(this + "flys around and sees a hungry bear.");
+        System.out.println(this + "flys around and sees the hungry bear.");
     }
 
     @Override
-    public void eat(Food food) {
-        int rnd = (int) (Math.random()*3);
+    public void eat() {
+        int rnd = (int) (Math.random() * 3);
         System.out.println(this + "doesn't try the honey and helps himself to a tasty " + foods[rnd]);
     }
 }

@@ -1,27 +1,43 @@
 package at.redlinghaus;
 
 public class Bear extends Animal {
-    boolean isSleeping;
+    private boolean isSleeping;
+    private Food food;
 
     public Bear(String name, double height, double width, double length, double weight) {
         super(name, height, width, length, weight);
         canFly = false;
         isSleeping = true;
-        Thing[] food;
     }
 
-    public void sleep(){
+    public void sleep() {
         System.out.println("Ccccccchrrrrrrrrrrrrr");
         isSleeping = true;
     }
 
-    public void wakeUp(){
+    public void wakeUp() {
         System.out.println(this + "wakes up and is hungry!");
         isSleeping = false;
     }
 
-    public void askForHelp(){
+    public void askForHelp() {
 
+    }
+
+    public boolean isSleeping() {
+        return isSleeping;
+    }
+
+    public void setSleeping(boolean sleeping) {
+        isSleeping = sleeping;
+    }
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
     }
 
     @Override
@@ -31,14 +47,14 @@ public class Bear extends Animal {
     }
 
     @Override
-    public void eat(Food honey) {
-        honey.weight += 0.5;
-        if (honey.weight == 0) {
+    public void eat() {
+        food.weight -= 0.1;
+        if (food.weight <= 0) {
             System.out.println(this + "eats his honey and falls asleep!");
             sleep();
-        } else{
+        } else {
             System.out.println(this + "eats his honey!");
-            eat(honey);
+            eat();
         }
     }
 }
