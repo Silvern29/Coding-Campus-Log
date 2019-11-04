@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class Main extends Application {
-    ArrayList<GeometricFigure> objects = new ArrayList<>();
+    static ArrayList<GeometricFigure> objects = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -30,18 +30,17 @@ public class Main extends Application {
     }
 
     public void drawShapes(GraphicsContext gc) {
-        gc.setFill(Color.DARKGREEN);
-        gc.setStroke(Color.DARKCYAN);
-        gc.setLineWidth(5);
-
-        gc.fillOval(10,10, 80 , 80);
-
-        gc.setFill(Color.DARKCYAN);
-        gc.fillRoundRect(100,100,80,80, 40, 40);
+        for (GeometricFigure el : objects) {
+            el.draw(gc);
+        }
     }
 
 
     public static void main(String[] args) {
+        objects.add(new Rectangle(40, 80, 10, 10));
+        objects.add(new Square(40, 50, 10));
+        objects.add(new Circle(40, 90, 10));
+
         launch(args);
     }
 }
