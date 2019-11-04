@@ -1,6 +1,6 @@
 package at.redlinghaus;
 
-public class Rectangle {
+public class Rectangle extends GeometricFigure{
     private int a, b, absA, absB;
     private double d;
     private Point m;
@@ -158,5 +158,11 @@ public class Rectangle {
                 ", p1=" + p1 +
                 ", p3=" + p3 +
                 '}';
+    }
+
+    @Override
+    public double calculateArea() {
+        updateSides();
+        return a * b;
     }
 }
