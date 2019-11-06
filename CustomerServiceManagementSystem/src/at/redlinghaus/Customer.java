@@ -2,32 +2,46 @@ package at.redlinghaus;
 
 public class Customer {
     private String name;
-    private String membership;
-    private int indivdualDiscount;
+    private int membership;
+    private int individualDiscount;
+    private Cart cart;
 
-    public Customer(String name, String membership, int indivdualDiscount){
+    public Customer(String name, int membership, int individualDiscount){
         this.name = name;
         this.membership = membership;
-        this.indivdualDiscount = indivdualDiscount;
+        this.individualDiscount = individualDiscount;
+        this.cart = new Cart();
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getMembership() {
+    public int getMembership() {
         return membership;
     }
 
-    public void setMembership(String membership) {
+    public void setMembership(int membership) {
         this.membership = membership;
     }
 
-    public int getIndivdualDiscount() {
-        return indivdualDiscount;
+    public int getIndividualDiscount() {
+        return individualDiscount;
     }
 
-    public void setIndivdualDiscount(int indivdualDiscount) {
-        this.indivdualDiscount = indivdualDiscount;
+    public void setIndividualDiscount(int individualDiscount) {
+        this.individualDiscount = individualDiscount;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }

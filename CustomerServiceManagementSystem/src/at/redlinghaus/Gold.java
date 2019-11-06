@@ -1,4 +1,7 @@
 package at.redlinghaus;
 
-public interface Gold extends Membership {
+public class Gold extends Member {
+    public Gold(int memberDiscount){
+        this.memberDiscount = memberDiscount;
+    }
 }

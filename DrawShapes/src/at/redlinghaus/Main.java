@@ -14,6 +14,13 @@ public class Main extends Application {
     static ArrayList<Shape> objects = new ArrayList<>();
 
     public static void main(String[] args) {
+
+
+        launch(args);
+    }
+
+    @Override
+    public void init() {
         MovablePoint mr = new MovablePoint(10, 10);
         MovablePoint msq = new MovablePoint(120, 10);
         MovablePoint mc = new MovablePoint(330, 110);
@@ -33,13 +40,11 @@ public class Main extends Application {
         ((Rectangle) sr).resize(120);
         ((Square) ssq).resize(150);
         ((Circle) sc).resize(80);
-
-        launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Drawing Figures");
+        primaryStage.setTitle("Drawing Shapes");
         Group root = new Group();
         Canvas canv = new Canvas(600, 500);
         GraphicsContext gc = canv.getGraphicsContext2D();
