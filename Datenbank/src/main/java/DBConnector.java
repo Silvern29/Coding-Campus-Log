@@ -7,7 +7,6 @@ public class DBConnector {
     private String dbName;
     private String userName;
     private String passWord;
-    private Connection connection;
 
     public DBConnector (String hostName, String dbName, String userName, String passWord) {
         this.hostName = hostName;
@@ -17,6 +16,7 @@ public class DBConnector {
     }
 
     public Connection connectDB(){
+        Connection connection = null;
         try {
             System.out.println("Connecting!");
             String dbURL = "jdbc:mysql://" + hostName + "/" + dbName;
@@ -27,10 +27,10 @@ public class DBConnector {
         return connection;
     }
 
-    public void breakDBCon(){
+    public void breakDBCon(Connection con){
         try {
             System.out.println("Breaking connection!");
-            connection.close();
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
