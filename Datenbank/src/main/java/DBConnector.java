@@ -8,14 +8,14 @@ public class DBConnector {
     private String userName;
     private String passWord;
 
-    public DBConnector (String hostName, String dbName, String userName, String passWord) {
+    public DBConnector(String hostName, String dbName, String userName, String passWord) {
         this.hostName = hostName;
         this.dbName = dbName;
         this.userName = userName;
         this.passWord = passWord;
     }
 
-    public Connection connectDB(){
+    public Connection connectDB() {
         Connection connection = null;
         try {
             System.out.println("Connecting!");
@@ -27,7 +27,7 @@ public class DBConnector {
         return connection;
     }
 
-    public void breakDBCon(Connection con){
+    public void breakDBCon(Connection con) {
         try {
             System.out.println("Breaking connection!");
             con.close();
