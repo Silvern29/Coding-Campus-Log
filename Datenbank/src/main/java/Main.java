@@ -4,10 +4,30 @@ public class Main {
     public static void main(String[] args) {
         DBConnector dbc = new DBConnector("localhost", "ccp19", "root", "pass");
 
-        Connection con = dbc.connectDB();
-//        dbc.breakDBCon(con);
-
+        String dbUpdate = "INSERT INTO employees (first_name, last_name, street, appartment_number, zip, phonenumber, email) "
+                            + "VALUES ('Karl', 'Mustermann', 'Musterstr.', '5', '87568', '06642003039', 'florian@redlinghaus.at')";
         String dbQuery = "SELECT * FROM employees";
+
+        insertInto(dbc, dbUpdate);
+        printTable(dbc, dbQuery);
+    }
+
+    public static void insertInto(DBConnector dbc, String dbUpdate) {
+        Connection con = dbc.connectDB();
+
+        try {
+            Statement state = con.createStatement();
+
+            state.executeUpdate(dbUpdate);
+            dbc.breakDBCon(con);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printTable(DBConnector dbc, String dbQuery){
+        Connection con = dbc.connectDB();
 
         try {
             Statement state = con.createStatement();
@@ -25,9 +45,10 @@ public class Main {
                 Date updatedAt = result.getDate("updated_at");
                 Date createdAt = result.getDate("created_at");
 
-                System.out.printf("%d, %s, %s, %s, %s, %s, %s, %s, %s, %s", firstName, lastName, street, appartmentNumber, zip, phonenumber,email, updatedAt, createdAt);
+                System.out.printf("%d, %s, %s, %s, %s, %s, %s, %s, %s, %s%n", personnelNumber, firstName, lastName, street, appartmentNumber, zip, phonenumber,email, updatedAt, createdAt);
             }
-            state.close();
+            dbc.breakDBCon(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
