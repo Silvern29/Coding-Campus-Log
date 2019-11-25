@@ -34,7 +34,7 @@ public class Main {
 
         try {
             Statement state = con.createStatement();
-            state.executeUpdate(dbUpdate);
+                state.executeUpdate(dbUpdate);
             dbc.breakDBCon(con);
         } catch (SQLException e) {
             e.printStackTrace();

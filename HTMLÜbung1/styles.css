@@ -1,0 +1,39 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    width: 70vw;
+    margin: auto;
+}
+
+header{
+    min-height: 100vh;
+    background: url("sunset-3309381_1920.jpg") no-repeat center fixed;
+}
+
+nav {
+    position: fixed;
+    width: 70vw;
+    background: #eeeeee;
+}
+
+nav li {
+    display: inline;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+}
+
+footer{
+    min-height: 100vh;
+}
