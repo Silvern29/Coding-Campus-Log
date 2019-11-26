@@ -1,39 +1,145 @@
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Montserrat, sans-serif;
-}
-
-body {
-    width: 70vw;
-    margin: auto;
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
 header{
     min-height: 100vh;
     background: url("sunset-3309381_1920.jpg") no-repeat center fixed;
+    background-size: cover;
+    background-clip: border-box;
+    position: relative;
+}
+
+.header-text {
+    padding-left: 20vw;
+    padding-top: 80vh;
+    color: white;
+}
+
+h1 {
+    color: orange;
+    font-size: 68px;
 }
 
 nav {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-items: center;
     position: fixed;
-    width: 70vw;
-    background: #eeeeee;
+    width: 100vw;
+    background: rgba(156, 133, 32, 0.8);
+    height: 80px;
+    padding-left: 20%;
 }
 
 nav li {
     display: inline;
     list-style: none;
+    padding: 40px;
+}
+
+nav li.active {
+    background: rgb(203, 177, 41);
 }
 
 nav a {
     text-decoration: none;
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
 }
 
-body{
+main {
+    min-height: 200vh;
+}
+
+.main-text {
     min-height: 100vh;
+}
+
+.main-text h2 {
+    position: relative;
+    top: 10vh;
+    left: 10vw;
+    color: rgb(151, 139, 26);
+    font-size: 68px;
+    margin: 20px;
+}
+
+.main-text-container, .list-example, table{
+    background: rgb(191, 188, 26);
+    width: 40vw;
+    position: relative;
+    top: 10vh;
+    left: 50vw;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.list-example li {
+    margin-left: 30px;
+}
+
+.circle-list {
+    list-style-type: circle;
+}
+
+.abc-list {
+    list-style-type: lower-alpha;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.main-text-container p {
+    margin: 20px;
+}
+
+.main-text-container a {
+    margin: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: darkslategray;
+}
+
+.img-div {
+    min-height: 100vh;
+    background: url("deer-3733789_1920.jpg") no-repeat top fixed;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+main img {
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer{
-    min-height: 100vh;
+    background: linear-gradient(to right, rgb(117, 95, 29), rgb(191, 188, 26));
+    height: 100vh;
+}
+
+.footer-text {
+    position: relative;
+    top: 40vh;
+    left: 10vw;
+    width: 40vw;
+    padding: 100px;
+    border-radius: 20px;
+    color: rgb(81, 53, 28);
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
 }
