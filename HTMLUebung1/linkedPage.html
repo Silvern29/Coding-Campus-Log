@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second page</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Montserrat, sans-serif;
+        }
+    </style>
+</head>
+<body style="display: block; position: relative; width: 100vw">
+
+<nav>
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li class="active">
+            <a href="#">Second Page</a>
+        </li>
+    </ul>
+</nav>
+<header>
+    <div class="header-text">
+        <h1>Coding Campus</h1>
+        <h2>2019</h2>
+        <h3>Dornbirn, Vorarlberg</h3>
+    </div>
+</header>
+
+<main>
+    <div class="main-text">
+        <h2>Lists in HTML and CSS</h2>
+        <div class="list-example">
+            <ol class="num-list">
+                <li>Item 1
+                    <ol class="abc-list">
+                        <li>Item 1.1</li>
+                        <li>
+                            <ul class="circle-list">Item 1.2
+                                <li>Item 1.2.1</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li>Item 2</li>
+            </ol>
+        </div>
+
+        <h2 style="margin-top: 200px; text-align: center">Tables in HTML and CSS</h2>
+        <table>
+            <thead>
+                <th>Book title</th>
+                <th>Author firstname</th>
+                <th>lastname</th>
+                <th>Publication</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Harry Potter 1</td>
+                    <td colspan="2" rowspan="2">J.K. Rowling</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Harry Potter 2</td>
+                    <td>2006</td>
+                </tr>
+                <tr>
+                    <td>Harry Potter 1</td>
+                    <td colspan="2" rowspan="2">J.K. Rowling</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Harry Potter 2</td>
+                    <td>2006</td>
+                </tr>
+                <tr>
+                    <td>Harry Potter 1</td>
+                    <td colspan="2" rowspan="2">J.K. Rowling</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Harry Potter 2</td>
+                    <td>2006</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="img-div"></div>
+</main>
+<footer>
+    <div class="footer-text">
+        <p>Florian Redlinghaus</p>
+        <p>florian@redlinghaus.at</p>
+    </div>
+</footer>
+</body>
+</html>

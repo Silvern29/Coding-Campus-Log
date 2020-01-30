@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="site.webmanifest" rel="manifest">
+    <link href="icon.png" rel="apple-touch-icon">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<div class="shoes">
+    <form id="shoe-calc">
+        <input class="shelf" type="text" placeholder="racks">
+        <input class="items-per-shelf" type="text" placeholder="shoes per rack">
+        <input class="items-next-to-shelf" type="text" placeholder="shoes on the floor">
+    </form>
+
+    <div>
+        <p>Total of shoes</p>
+        <p class="total"></p>
+    </div>
+</div>
+
+<div class="shopping">
+    <input type="text" class="shopping-note" placeholder="Write your items here">
+    <button type="button" id="add-btn">Add</button>
+    <ul class="shopping-list">
+    </ul>
+</div>
+
+<script src="js/vendor/modernizr-3.8.0.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga = function () {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+<script>
+    $('#shoe-calc').change(() => $('.total').html($('.shelf').val() * $('.items-per-shelf').val() + parseInt($('.items-next-to-shelf').val())));
+</script>
+<script>
+    $('#add-btn').click(() => $('.shopping-list').append("<li>" + $('.shopping-note').text() + "</li>"));
+</script>
+</body>
+
+</html>
